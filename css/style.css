@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.calendar {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+}
+
+.day-box {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    text-align: center;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.task-list {
+    margin-left: 20px;
+}
+
+.task-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.admin-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-section th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
