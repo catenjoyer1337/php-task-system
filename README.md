@@ -1,4 +1,20 @@
 ## Task Management System Documentation
+```perl
+task-system/
+├── db/
+│   └── tasksystem.db           # SQLite Database File
+├── src/
+│   ├── db.php                  # Database connection
+│   ├── task.php                # Task management functions
+│   ├── user.php                # User management functions
+├── public/
+│   ├── index.php               # Main page with calendar and task list
+│   ├── admin.php               # Admin page for managing users and tasks
+│   └── complete_task.php       # Mark a task as complete
+├── css/
+│   └── style.css               # Styling for the calendar and task display
+└── README.md                   # Project documentation
+```
 
 ### Goal:
 A system where users complete tasks for points. The system handles periodic tasks, rewards, penalties, and has an admin panel for managing users and tasks.
