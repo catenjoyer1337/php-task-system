@@ -1,40 +1,46 @@
-<?php
-require_once '../src/task.php';
-$tasks = getTasks();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../css/style.css">
-    <title>Task System</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--primary, #F5F1ED);
+            color: var(--text-primary, #252323);
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        ul {
+            list-style-type: none;
+        }
+        li {
+            padding: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: var(--accent, #70798C);
+        }
+    </style>
 </head>
 <body>
-    <div class="calendar">
-        <?php foreach (range(1, 30) as $day): ?>
-            <div class="day-box">
-                <p><?php echo $day; ?></p>
-            </div>
-        <?php endforeach; ?>
-    </div>
-
-    <div class="task-list">
-        <h2>Tasks</h2>
+    <div class="container">
+        <h1>Available Pages</h1>
         <ul>
-            <?php foreach ($tasks as $task): ?>
-                <li style="color: <?php echo getTaskColor($task['value']); ?>">
-                    <?php echo $task['taskName'] . " - " . $task['value'] . " Points"; ?>
-                </li>
-            <?php endforeach; ?>
+            <?php
+            // Scan the current directory for .php files and display them
+            $files = scandir('.');
+            foreach ($files as $file) {
+                if (strpos($file, '.php') !== false && $file != 'index.php') {
+                    echo "<li><a href='$file'>" . ucfirst(str_replace('.php', '', $file)) . "</a></li>";
+                }
+            }
+            ?>
         </ul>
     </div>
 </body>
 </html>
-
-<?php
-function getTaskColor($value) {
-    if ($value >= 20) return 'red';
-    if ($value >= 10) return 'orange';
-    return 'green';
-}
-?>
