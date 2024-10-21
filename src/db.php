@@ -19,7 +19,8 @@ function connectDb() {
             taskFreq INTEGER NOT NULL,
             value INTEGER,
             penalty INTEGER,
-            last_completed TEXT
+            last_completed TEXT,
+            date_added DATETIME DEFAULT CURRENT_TIMESTAMP
         );
     ");
     
