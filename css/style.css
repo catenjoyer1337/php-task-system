@@ -1,5 +1,23 @@
+:root{
+            --text-primary: #252323;
+            --accent: #70798C;
+            --primary: #F5F1ED;
+            --secondary: #DAD2BC;
+            --terciary: #A99985;
+}
+
+
 body {
     font-family: Arial, sans-serif;
+    background-color: var(--primary);
+    color: var(--text-primary);
+    margin: 0;
+    padding 0;
+  }
+
+a{
+  text-decoration: none;
+  color: var(--text-primary);
 }
 
 .calendar {
